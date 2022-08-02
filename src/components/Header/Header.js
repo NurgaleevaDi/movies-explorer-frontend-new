@@ -7,10 +7,10 @@ function Header(props) {
         <header className="header">
             <img className="header__logo" src={logo} alt="Логотип" />
             <div className="header__menu">
-                <Link to={props.link} className="header__link">
+                <Link to={props.link} className="link header__link">
                     {props.nameLink}
                 </Link>
-                <button className="header__button">
+                <button className="button header__button">
                     {props.name}
                 </button>
             </div>
