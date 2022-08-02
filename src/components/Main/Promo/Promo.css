@@ -12,8 +12,6 @@
 
 .promo__title {
     margin: 0 auto;
-    /* margin-left: 10px;
-    margin-right: 10px; */
     max-width: 300px;
     color: #FFFFFF;
     text-align: center;
@@ -31,21 +29,5 @@
         font-size: 50px;
         line-height: 1.16;
         max-width: 730px;
-        /* margin-left: 19px;
-        margin-right: 19px; */
-    }
-}
-
-@media screen and (min-width: 1010px) {
-    .promo__title {
-        /* margin-left: 150px;
-        margin-right: 150px; */
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .promo__title {
-        /* margin-left: 275px;
-        margin-right: 275px; */
     }
 }
