@@ -1,0 +1,10 @@
+.header {
+    min-height: 74px;
+    background-color: #5C5C5C;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin-left: 14px;
+}
