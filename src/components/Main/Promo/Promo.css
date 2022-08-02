@@ -38,14 +38,14 @@
 
 @media screen and (min-width: 1010px) {
     .promo__title {
-        margin-left: 150px;
-        margin-right: 150px;
+        /* margin-left: 150px;
+        margin-right: 150px; */
     }
 }
 
 @media screen and (min-width: 1280px) {
     .promo__title {
-        margin-left: 275px;
-        margin-right: 275px;
+        /* margin-left: 275px;
+        margin-right: 275px; */
     }
 }
