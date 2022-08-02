@@ -1,0 +1,21 @@
+.promo {
+    min-height: 570px;
+    background-color: #5C5C5C;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-image: url('../../../images/promo-pic-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
+.promo__title {
+    margin: 0 auto;
+    max-width: 300px;
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 31px;
+    line-height: 1.26;
+    letter-spacing: -0.04em;
+}

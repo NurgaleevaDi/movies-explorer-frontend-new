@@ -1,19 +1,12 @@
 import React from "react";
+// import promo from "../../../images/promo-pic.svg"
 // import { Link } from "react-router-dom";
 
 function Promo(props) {
     return(
-        // <header className="header">
-        //     <img className="header__logo" src={logo} alt="Логотип" />
-        //     <div className="header__menu">
-        //         <Link to={props.link} className="link header__link">
-        //             {props.nameLink}
-        //         </Link>
-        //         <button className="button header__button">
-        //             {props.name}
-        //         </button>
-        //     </div>
-        // </header>
+        <div className="promo">
+            <h1 className="promo__title">Учебный проект студента&nbsp;факультета Веб-разработки.</h1>
+        </div>
     )
 }
 export default Promo;
