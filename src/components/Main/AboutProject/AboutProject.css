@@ -1,19 +1,16 @@
 .sectionMain {
-    margin-left: 18px;
-    margin-right: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 .sectionMain__title {
     margin: 0;
-    margin-top: 70px;
-    margin-bottom: 28px;
+    padding-top: 70px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid black;
     font-size: 18px;
     font-weight: normal;
     line-height: 1.21;
     letter-spacing: -0.04em;
-}
-
-.sectionMain__item {
-    border-top: 1px solid black;
 }
 
 .sectionMain__subtitle {
@@ -38,7 +35,7 @@
     margin-top: 60px;
     display: grid;
     grid-template-columns: 100px 1fr;
-    grid-template-rows: 35px 35px;
+    /* grid-template-rows: 35px 35px; */
     font-size: 11px;
     line-height: 1.18;
     text-align: center;
@@ -48,20 +45,23 @@
 
 .progress-bar__text {
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 11px;
+    padding-bottom: 11px;
     background-color: #F2F2F2;
 }
 
 .progress-bar__text_green {
     margin: 0;
-    padding-top: 11px;
     background-color: #2BE080;
 }
 
 .progress-bar__text_eng {
     margin: 0;
     margin-top: 10px;
-    margin-bottom: 70px;
+    padding-bottom: 70px;
     font-size: 11px;
     line-height: 1.16;
     color: #A0A0A0;
@@ -69,11 +69,11 @@
 
 @media screen and (min-width: 768px) {
     .sectionMain {
-        margin-left: 50px;
-        margin-right: 50px;
+       padding-left: 50px;
+       padding-right: 50px;
     }
     .sectionMain__title {
-        margin-top: 90px;
+        padding-top: 90px;
         margin-bottom: 23px;
         font-size: 22px;
         line-height: 1.23;
@@ -101,17 +101,18 @@
     }
     .progress-bar__text_eng {
         font-size: 14px;
-        margin-bottom: 90px;
+        margin-top: 14px;
+        padding-bottom: 90px;
     }
 }
 
 @media screen and (min-width: 1280px) {
      .sectionMain {
-        margin-left: 70px;
-        margin-right: 70px;
+        padding-left: 70px;
+        padding-right: 70px;
     }
     .sectionMain__title {
-        margin-top: 110px;
+        padding-top: 110px;
     }
     .sectionMain__item {
         grid-column-gap: 40px;
@@ -123,5 +124,8 @@
     .progress-bar{
         margin-top: 110px;
         grid-template-columns: 248px 1fr;
+    }
+    .progress-bar__text_eng {
+        padding-bottom: 110px;
     }
 }
