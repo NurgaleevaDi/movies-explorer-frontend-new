@@ -1,0 +1,81 @@
+.portfolio__img {
+    margin: auto;
+    margin-top: 60px;
+    min-height: 352px;
+    max-width: 284px;
+    background-image: url('../../../images/student.jpeg');
+    background-size: 100%;
+    background-position: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.portfolio__title {
+    margin: 0;
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.portfolio__subtitle {
+    margin: 0;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.45;  
+}
+
+.portfolio__text {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.portfolio__links {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 70px;
+    list-style: none;
+    display: flex;
+}
+
+.portfolio__link {
+    text-decoration: none;
+    margin-right: 26px;
+    color: #000000;
+}
+
+.portfolio__menu-title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 400;   
+    font-size: 14px;
+    line-height: 1.43;
+    color: #A0A0A0;
+}
+
+.portfolio__menu-projects {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.portfolio__project-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 47px;
+    color: black;
+}
+.portfolio__link-container {
+    border-bottom: 1px solid #E6E6E6; 
+}
+.portfolio__link-container:last-child {
+    border: none; 
+}
