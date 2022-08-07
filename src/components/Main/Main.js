@@ -1,4 +1,6 @@
 import React from "react";
+
+import Footer from "../Footer/Footer";
 import AboutProject from "./AboutProject/AboutProject";
 import NavTab from "./NavTab/NavTab";
 import Portfolio from "./Portfolio/Portfolio";
@@ -13,7 +15,7 @@ function Main() {
             <AboutProject />
             <Techs />
             <Portfolio />
-            
+            <Footer />
         </div>
     )
 }

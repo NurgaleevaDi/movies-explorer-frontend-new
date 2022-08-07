@@ -5,13 +5,13 @@ function NavTab() {
         <div className="navTab">
             <ul className="navTab__menu">
                 <li className="navTab__item"> 
-                    <a className="link navTab__link" href="#test">О проекте</a>
+                    <a className="link navTab__link" href="#about-project">О проекте</a>
                 </li>
                 <li className="navTab__item"> 
-                    <a className="link navTab__link" href="#test">Технологии</a>
+                    <a className="link navTab__link" href="#techs">Технологии</a>
                 </li>
                 <li className="navTab__item"> 
-                    <a className="link navTab__link" href="#test">Студент</a>
+                    <a className="link navTab__link" href="#portfolio">Студент</a>
                 </li>
             </ul>
             <div id="test"></div>

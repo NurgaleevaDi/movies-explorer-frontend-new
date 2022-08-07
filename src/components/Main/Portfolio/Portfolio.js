@@ -4,7 +4,7 @@ import React from "react";
 function Portfolio() {
     return(
         <div className="sectionMain">
-            <h2 className="sectionMain__title">Студент</h2>
+            <h2 className="sectionMain__title" id="portfolio">Студент</h2>
             <div className="portfolio">
                 <div className="portfolio__resume">
                     <div className="portfolio__img"></div>

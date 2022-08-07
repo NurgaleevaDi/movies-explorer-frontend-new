@@ -1,9 +1,16 @@
 import React from "react";
+import Header from "../Header/Header";
 
 function Movies() {
     return(
-        <div>
-            <p> Movies </p>
+        <div className="movies">
+            <Header 
+                className="header_white"
+                invisible="header__invisible"/>
+            <div className="movies__search-block">
+                <input > 
+                </input>
+            </div>
         </div>
     )
 }

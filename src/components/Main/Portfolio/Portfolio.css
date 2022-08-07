@@ -91,6 +91,7 @@
 
 .portfolio__link-container:last-child {
     border: none; 
+    margin-bottom: 70px;
 }
 
 .portfolio__arrow {
@@ -153,6 +154,9 @@
         font-size: 28px;
         line-height: 2.14;
     }
+    .portfolio__link-container:last-child { 
+        margin-bottom: 90px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -189,5 +193,8 @@
     .portfolio__arrow {
         font-size: 30px;
         line-height: 2;
+    }
+    .portfolio__link-container:last-child { 
+        margin-bottom: 125px;
     }
 }
