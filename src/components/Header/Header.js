@@ -1,41 +1,42 @@
 import React from "react";
+import { useState } from "react";
 import logo from "../../images/logo.svg";
-import icon from "../../images/icon-profile.svg";
-import { Link, NavLink } from "react-router-dom";
+// import icon from "../../images/icon-profile.svg";
+import { Link } from "react-router-dom";
+import HeaderMenu from "./HeaderMenu";
+
+
 
 function Header(props) {
-    console.log(props);
+    const [openMenu, setOpenMenu] = useState(false);
+
+    function handleOpenMenu() {
+        setOpenMenu(true);
+    }
+    function handleCloseMenu() {
+        setOpenMenu(false);
+    }
+
     return(
         <header className={`header ${props.className}`}>
-            <img className="header__logo" src={logo} alt="Логотип" />
+            <Link to="/" className="header__logo-link link">
+                <img className="header__logo" src={logo} alt="Логотип" />
+            </Link>
             <nav className="header__menu">
-                <Link to={props.link} className="link header__link">
-                    {props.nameLink}
+                <Link to="/signup" className={`link header__register-link ${props.invisible}`}>
+                    Регистрация
                 </Link>
-                <button className={`button header__button ${props.invisible}`}>
-                    {props.name}
-                </button>
-
-                {/* бургерное меню */}
-                <div className="header__menu-body">
-                    <nav className="header__menu-list">
-                        <NavLink exact to="/" className="header__menu-item-link link">Главная</NavLink>
-                        <NavLink to="/movies" className="header__menu-item-link link">Фильмы</NavLink>
-                        <NavLink to="/saved-movies" className="header__menu-item-link link">Сохраненные фильмы</NavLink>
-                    </nav>
-                    <div className="profile">
-                        <p className="profile__name">Аккаунт</p>
-                        <button type="button" className="profile__button button">
-                            <img className="profile__img" src={icon} alt="Profile" />
-                        </button>
-                    </div>
-                </div>
-                <div className="header__menu-icon-container">
-                    <div className="header__menu-icon">
-                        <span></span>
-                    </div>
-                </div>
-            </nav>
+                <Link to="/signin" className={`link heaader__login-link ${props.invisible}`}>
+                    Войти
+                </Link>
+            </nav>    
+            <button  type="button" className="header__burger-container button" onClick={handleOpenMenu}>
+                <span className={`header__burger-icon ${props.activeBurger ? "header__burger-icon_active" : ""}`}></span>
+            </button>
+             <HeaderMenu
+                openMenu={openMenu}
+                onClose={handleCloseMenu}
+            />
         </header>
     )
 }

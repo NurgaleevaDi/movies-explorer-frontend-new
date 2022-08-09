@@ -16,10 +16,13 @@ code {
 @import url('../src/vendor/fonts/fonts.css');
 
 @import url('../src/components/App/App.css');
+@import url('../src/components/Main/Main.css');
 @import url('../src/components/Header/Header.css');
+@import url('../src/components/Header/HeaderMenu.css');
 @import url('../src/components/Main/Promo/Promo.css');
 @import url('../src/components/Main/NavTab/NavTab.css');
 @import url('../src/components/Main/AboutProject/AboutProject.css');
 @import url('../src/components/Main/Techs/Techs.css');
 @import url('../src/components/Main/Portfolio/Portfolio.css');
 @import url('../src/components/Footer/Footer.css');
+@import url('../src/components/Movies/Movies.css');

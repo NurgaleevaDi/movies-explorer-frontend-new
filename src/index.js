@@ -14,4 +14,4 @@ root.render(
   </BrowserRouter>
 );
 
-reportWebVitals(); // уточнить зачем это
+reportWebVitals();
