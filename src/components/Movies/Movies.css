@@ -21,6 +21,7 @@
     color: #A0A0A0;
     padding: 0;
     margin-left: 16px;
+    background-color: #FDFDFD;
 }
 .movies__button {
     border: none;
@@ -82,6 +83,27 @@
 .movies__img-search {
     display: none;
 }
+.movies__more {
+    margin-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+
+}
+.movies__btn-more {
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    min-height: 36px;
+    background-color: #F9F9F9;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
 
 @media screen and (min-width: 768px) {
     .movies {
@@ -90,8 +112,8 @@
     }
     .movies__search {
         margin-top: 80px;
-        margin-left: 20px;
-        margin-right: 20px;
+        /* margin-left: 20px;
+        margin-right: 20px; */
         padding-bottom: 109px;
         border-bottom: 1px solid #E8E8E8;
     }
@@ -142,7 +164,7 @@
         line-height: 1.38;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1280px) {
     .movies {
         margin-left: 70px;
         margin-right: 70px;

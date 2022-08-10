@@ -10,7 +10,7 @@ function Footer() {
                     <li className="footer__item"><a className="footer__link" href="hhttps://github.com/">Github</a></li>
                     <li className="footer__item"><a className="footer__link" href="https://ru-ru.facebook.com/">Facebook</a></li>
                 </ul>
-                <div className="footer__copyrigth"><p>&#169; 2022</p></div>
+                <p className="footer__copyrigth">&#169; 2022</p>
             </div>
         </footer>
     )

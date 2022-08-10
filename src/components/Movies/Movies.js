@@ -1,9 +1,10 @@
 import React from "react";
 // import { useState } from "react";
 import Header from "../Header/Header";
-import MoviesCard from "./MoviesCard/MoviesCard";
+import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import find from "../../images/find-button.svg"
 import search from "../../images/icon-search.svg"
+import Footer from "../Footer/Footer";
 
 function Movies() {
     
@@ -35,8 +36,15 @@ function Movies() {
                     </div>
                 </div>
             </section>
-            <MoviesCard />
+            <MoviesCardList />
+            <div className="movies__more">
+                <button className="movies__btn-more">
+                    Еще
+                </button>
+            </div>
+            <Footer />
         </div>
+
     )
 }
 export default Movies;
