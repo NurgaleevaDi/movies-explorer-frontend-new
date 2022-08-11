@@ -8,6 +8,7 @@ import HeaderMenu from "./HeaderMenu";
 
 
 function Header(props) {
+    console.log(props);
     const [openMenu, setOpenMenu] = useState(false);
 
     function handleOpenMenu() {

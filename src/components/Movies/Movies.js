@@ -36,7 +36,9 @@ function Movies() {
                     </div>
                 </div>
             </section>
-            <MoviesCardList />
+            <MoviesCardList 
+                // className="saved-movies-card__btn"
+            />
             <div className="movies__more">
                 <button className="movies__btn-more">
                     Еще

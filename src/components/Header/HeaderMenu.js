@@ -21,7 +21,7 @@ function HeaderMenu(props) {
                     <div className="header__profile-info">
                         <p className="profile__name">Аккаунт</p>
                         <button type="button" className="profile__button button">
-                            <Link to="/signin">
+                            <Link to="/profile">
                                 <img className="profile__img" src={icon} alt="Profile" />
                             </Link>
                         </button>

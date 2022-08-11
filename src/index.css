@@ -28,3 +28,5 @@ code {
 @import url('../src/components/Movies/Movies.css');
 @import url('../src/components/Movies/MoviesCard/MoviesCard.css');
 @import url('../src/components/Movies/MoviesCardList/MoviesCardList.css');
+@import url('../src/components/Profile/Profile.css');
+@import url('../src/components/Register/Register.css');

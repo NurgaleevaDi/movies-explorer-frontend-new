@@ -28,18 +28,18 @@
     width: 22px;
     height: 2.5px;
     background-color: #000000;
-    top: 18.25px;
-    left: 7px;
+    top: 20.25px;
+    left: 9px;
 }
 .header__burger-icon::after,
 .header__burger-icon::before {
     content: '';
 }
 .header__burger-icon::before {
-    transform: translate(-7px, -24.75px);
+    transform: translate(-9px, -29.25px);
 }
 .header__burger-icon::after {
-    transform: translate(-7px, -11.75px);
+    transform: translate(-9px, -11.25px);
 }
 .header__burger-icon_active {
    border: 1px red solid;
