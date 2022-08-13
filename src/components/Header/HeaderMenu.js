@@ -5,9 +5,9 @@ import close from "../../images/close.svg";
 import { Link } from "react-router-dom";
 
 function HeaderMenu(props) {
-
+    console.log(props);
     return(
-        <div className={`header__menu-movies ${props.openMenu ? "opened" : ""}`}>
+        <div className={`header__menu-movies ${props.invisibleMenu} ${props.openMenu ? "opened" : ""}`}>
             <div className="header__menu-overlay">
                 <div className="header__menu-content">
                     <button type="button" className="header__menu-movies-close button" onClick={props.onClose}>

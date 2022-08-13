@@ -1,22 +1,34 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import Header from "../Header/Header";
 import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList"
 import find from "../../images/find-button.svg"
 import search from "../../images/icon-search.svg"
 import Footer from "../Footer/Footer";
+import HeaderMenu from "../Header/HeaderMenu";
 
 function SavedMovies() {
-    
+    const [openMenu, setOpenMenu] = useState(false);
 
+    function handleOpenMenu() {
+        setOpenMenu(true);
+    }
+    function handleCloseMenu() {
+        setOpenMenu(false);
+    }
     return(
-        <div className="movies">
+        <div className="movies movies_saved">
             <Header 
                 className="header_white"
                 invisible="header__invisible"
                 button="header__invisible-button"
                 // openMenu={openMenu}
-                // onOpenMenu={handleOpenMenu}
+                openMenu={handleOpenMenu}
+            />
+              <HeaderMenu
+                openMenu={openMenu}
+                onClose={handleCloseMenu}
+                // invisibleMenu="header__menu-invisible"
             />
             <section className="movies__search">
                 <div className="movies__search-block">

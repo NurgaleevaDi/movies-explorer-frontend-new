@@ -7,20 +7,23 @@ import NavTab from "./NavTab/NavTab";
 import Portfolio from "./Portfolio/Portfolio";
 import Promo from "./Promo/Promo";
 import Techs from "./Techs/Techs";
+import AboutMe from "./AboutMe/AboutMe";
 
 function Main() {
     return(
-        <div className="landing">
+        <div className="main">
             <Header 
                 link="/signup"
                 name="Войти"
                 nameLink="Регистрация"
-                burger="header__ivisible-burger"
+                invisibleBurger="header__burger-invisible"
+                
             />
             <Promo />
             <NavTab />
             <AboutProject />
             <Techs />
+            <AboutMe />
             <Portfolio />
             <Footer />
         </div>

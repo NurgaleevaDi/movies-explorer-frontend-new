@@ -1,5 +1,7 @@
 .promo {
-    min-height: 570px;
+    /* min-height: 570px; */
+    margin-left: -14px;
+    margin-right: -14px;
     background-color: #5C5C5C;
     display: flex;
     justify-content: center;
@@ -9,7 +11,6 @@
     background-size: auto;
     background-position: center;
 }
-
 .promo__title {
     margin: 0 auto;
     max-width: 300px;
@@ -23,11 +24,19 @@
 
 @media screen and (min-width: 768px) {
     .promo {
-        background-image: url('../../../images/promo-pic-desktop.svg');   
+        background-image: url('../../../images/promo-pic-desktop.svg');
+        margin-left: -50px;
+        margin-right: -50px;  
     }
     .promo__title {
         font-size: 50px;
         line-height: 1.16;
         max-width: 730px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .promo {
+        margin-left: -70px;
+        margin-right: -70px;  
     }
 }
