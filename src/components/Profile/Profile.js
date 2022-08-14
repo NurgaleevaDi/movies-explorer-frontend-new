@@ -11,10 +11,34 @@ function Profile() {
                 invisible="header__invisible"
                 button="header__invisible-button"
             />
+            <h2 className="profile__title">Привет, Виталий!</h2>
             <form className="profile__form">
-                <h2 className="profile__title">Привет, Виталий!</h2>
-                <input className="profile__input-name"></input>
-                <input className="profile__input-email"></input>
+                <div className="profile__input-container">
+                    <p className="profile__input-discription">Имя</p>
+                    <input 
+                        className="profile__input-text profile__input-text_name" 
+                        type="text" 
+                        name="username"
+                        placeholder="Имя"
+                        value="Виталий"
+                        required
+                        minLength="2"
+                        maxLength="30"
+                    />
+                </div>
+                <div className="profile__input-container">
+                    <p className="profile__input-discription">E-mail</p>
+                    <input 
+                        className="profile__input-text profile__input-text_email"
+                        type="text"
+                        name="useremail"
+                        placeholder="E-mail"
+                        value="pochta@yandex.ru"
+                        required
+                        minLength="2"
+                        maxLength="30"
+                    />
+                </div>   
             </form>
             <footer className="profile__footer">
                 <button type="button" className="profile__btn button">Редактировать</button>
