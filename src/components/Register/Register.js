@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.svg"
+import logo from "../../images/logo.svg";
 
 function Register() {
     return(
@@ -10,10 +10,10 @@ function Register() {
                     <img src={logo} className="register__logo-img" alt="Логотип"></img>
                 </Link>
                 <p className="register__title">Добро пожаловать!</p>
-            </div>
+             </div>
             <form className="register__form">
-                <div className="register__input-container">
-                    <p className="register__input-disription">Имя</p>
+                 <div className="register__input-container">
+                     <p className="register__input-disription">Имя</p>
                     <input 
                         className="register-input__text"
                         type="text" 
@@ -57,7 +57,6 @@ function Register() {
                     Уже зарегистрированы?
                     <Link to="/signin" className="register__signin-link">Войти</Link>
                 </p>
-
             </div>
         </div>
     )
