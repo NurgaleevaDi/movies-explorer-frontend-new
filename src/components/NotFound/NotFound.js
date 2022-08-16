@@ -11,6 +11,5 @@ function NotFound() {
             <Link to="/" className="notfound__link link">Назад</Link>
         </div>
     )
-    
 }
 export default NotFound;

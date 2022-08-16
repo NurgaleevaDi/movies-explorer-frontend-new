@@ -6,8 +6,7 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0,0,0,.5);
-    /* visibility: hidden;
-    opacity: 0; */
+    z-index: 13;
 }
 .opened {
     display: block;
@@ -22,7 +21,6 @@
 .navigation__menu {
     display: grid;
     grid-template-rows: 22px 1fr 30px;
-    /* min-height: 100vh; */
     z-index: 10;
     background-color: white;
     width: 100%;
@@ -100,20 +98,17 @@
         visibility: hidden;
         position: static;
         display: block;
-    }
-    .navigation__overlay {
-        /* display: none; */
-        visibility: hidden;
+        width: 100%;
     }
     .navigation__menu {
         visibility: visible;
-        /* display: grid; */
+        position: static;
+        display: grid;
         grid-template-rows: 74px;
         grid-template-columns: 1fr 170px;
-        max-width: 91.6%;
+        width: 100%;
         max-height: 74px;
         background: none;
-        width: 100%; 
     }
     .active {
         border: none;

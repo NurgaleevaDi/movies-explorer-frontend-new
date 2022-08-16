@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
+import Input from "../Input/Input";
 
 function Register() {
     return(
@@ -12,44 +13,35 @@ function Register() {
                 <p className="register__title">Добро пожаловать!</p>
              </div>
             <form className="register__form">
-                 <div className="register__input-container">
-                     <p className="register__input-disription">Имя</p>
-                    <input 
-                        className="register-input__text"
-                        type="text" 
-                        name="username"
-                        placeholder="Имя"
-                        value="Виталий"
-                        required
-                        minLength="2"
-                        maxLength="30"
-                    />
-                </div>
-                <div className="register__input-container">
-                    <p className="register__input-disription">E-mail</p>
-                    <input 
-                        className="register-input__text"
-                        type="text" 
-                        name="useremail"
-                        placeholder="E-mail"
-                        value="pochta@yandex.ru"
-                        required
-                        minLength="2"
-                        maxLength="30"
-                    />
-                </div>
-                <div className="register__input-container">
-                    <p className="register__input-disription">Пароль</p>
-                    <input 
-                        className="register-input__text"
-                        type="password" 
-                        name="password"
-                        placeholder="Пароль"
-                        value="Пароль"
-                        required
-                    />
-                    <span className="register__error-message">Что-то пошло не так...</span>
-                </div>  
+                <Input
+                    discription="Имя"
+                    type="text" 
+                    name="username"
+                    placeholder="Имя"
+                    value="Виталий"
+                    required
+                    minLength="2"
+                    maxLength="30"
+                />
+                <Input
+                    discription="E-mail"
+                    type="text" 
+                    name="useremail"
+                    placeholder="E-mail"
+                    value="pochta@yandex.ru"
+                    required
+                    minLength="2"
+                    maxLength="30"
+                />
+                <Input
+                    discription="Пароль"
+                    type="password" 
+                    name="password"
+                    placeholder="Пароль"
+                    value="Пароль"
+                    required
+                    spantext="Что-то пошло не так..."
+                />
             </form>
             <div className="register__footer">
                 <button type="button" className="register__btn">Зарегистрироваться</button>

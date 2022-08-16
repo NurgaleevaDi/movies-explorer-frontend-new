@@ -1,5 +1,4 @@
 import React from "react";
-
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import AboutProject from "./AboutProject/AboutProject";
@@ -16,8 +15,7 @@ function Main() {
                 link="/signup"
                 name="Войти"
                 nameLink="Регистрация"
-                invisibleBurger="header__burger-invisible"
-                
+                invisibleBurger="header__burger-invisible"   
             />
             <Promo />
             <NavTab />

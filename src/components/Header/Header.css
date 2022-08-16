@@ -7,7 +7,7 @@
     align-items: center;
 }
 .header_white {
-    background: none;
+    background-color: #FFFFFF;
     margin-left: -10px;
     margin-right: -10px;
 }
@@ -15,24 +15,24 @@
     margin-left: 14px;
     z-index: 12;
 }
-.header__menu {
+/* .header__menu {
     margin-right: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .header__invisible {
     display: none;
 }
-.header__register-link {
+/* .header__register-link {
     font-weight: 500;
     font-size: 10px;
     line-height: 1.6;
     color: #FFFFFF;
     text-decoration: none;
     margin-right: 14px;
-}
-.header__login-link-container {
+} */
+/* .header__login-link-container {
     min-width: 54px;
     min-height: 26px;
     background-color: #2BE080;
@@ -41,21 +41,19 @@
     justify-content: center;
     align-items: center;
    
-}
-.header__login-link {
+} */
+/* .header__login-link {
     font-weight: 500;
     font-size: 10px;
     line-height: 1.6; 
     color:#000000;
     text-decoration: none;
     z-index: 10;
-}
+} */
 .header__burger-container {
     width: 40px;
     height: 43px;
     padding: 0;
-    /* margin-right: 14px; */
-    /* background-color:#FFFFFF; */
     background: none;
     position: relative;
     border: none;
@@ -88,8 +86,8 @@
 .header__burger-icon::after {
     transform: translate(-9px, -11.25px);
 }
-.header__burger-icon_active {
-   border: 1px red solid;
+.header__burger-container_inv {
+   display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -104,21 +102,21 @@
     .header__logo-link {
         margin-left: 30px;
     }
-    .header__menu {
+    /* .header__menu {
         margin-right: 30px;
-    }
-    .header__register-link {
+    } */
+    /* .header__register-link {
         font-size: 12px;
         line-height: 1.33;
-    }
-    .header__login-link-container {
+    } */
+    /* .header__login-link-container {
         min-width: 76px;
         min-height: 32px;
-    }
-    .header__login-link {
+    } */
+    /* .header__login-link {
         font-size: 12px;
         line-height: 1.33;
-    }
+    } */
     .header__burger-container {
         width: 44px;
         height: 44px;
@@ -141,12 +139,11 @@
     .header__logo-link {
         margin-left: 70px;
     }
-    .header__login-link-container {
+    /* .header__login-link-container {
         min-width: 76px;
         min-height: 32px;
-    }
+    } */
     .header__burger-container {
         display: none;
     }
 }
-

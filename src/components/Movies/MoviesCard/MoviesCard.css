@@ -1,18 +1,15 @@
 .movies-card {
     background-color:#FDFDFD;
-    /* max-width: 300px; */
 }
 .movies-card__info {
     display: grid;
     width: 100%;
-    /* grid-auto-flow: column; */
     grid-template-columns: 1fr 44px;
     grid-template-areas: 
         "title lable"
         "time lable"
         "img img";
 }
-
 .movies-card__title {
     grid-area: title;
     margin: 0;

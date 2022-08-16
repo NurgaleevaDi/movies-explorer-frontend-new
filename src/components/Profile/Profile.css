@@ -38,7 +38,6 @@
     margin: 0;
     margin-bottom: 16px;
     margin-top: 17px;
-
 }
 .profile__input-text_name {
     text-align: right;
@@ -95,7 +94,6 @@
         margin-left: 70px;
         margin-right: 70px;
         grid-template-rows: 74px 103px minmax(100px, 1fr) 118px;
-    
     }
     .profile__title {
         margin-top: 74px;

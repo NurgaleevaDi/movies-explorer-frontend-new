@@ -1,5 +1,4 @@
 .sectionMain_techs {
-    
     padding-bottom: 70px;
 }
 .techs {
@@ -72,7 +71,6 @@
         grid-auto-flow: column;
     }
 }
-
 @media screen and (min-width: 1280px) {
     .sectionMain_techs {
         padding-bottom: 100px;

@@ -7,7 +7,6 @@ import film4 from "../../../images/film4.jpg";
 import film5 from "../../../images/film5.jpg";
 
 function MoviesCardList() {
-    // console.log(props);
     return(
         <div className="movies-cardlist">
             <MoviesCard 

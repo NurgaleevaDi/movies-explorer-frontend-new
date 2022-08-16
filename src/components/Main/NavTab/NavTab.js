@@ -11,7 +11,7 @@ function NavTab() {
                     <a className="link navTab__link" href="#techs">Технологии</a>
                 </li>
                 <li className="navTab__item"> 
-                    <a className="link navTab__link" href="#portfolio">Студент</a>
+                    <a className="link navTab__link" href="#about-me">Студент</a>
                 </li>
             </ul>
             <div id="test"></div>

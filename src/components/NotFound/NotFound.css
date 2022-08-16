@@ -2,7 +2,6 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  
 }
 .notfound__content {
     margin: auto;
@@ -50,6 +49,5 @@
 @media screen and (min-width: 1280px) {
     .notfound__link {
         margin-bottom: 60px;
-    }
-    
+    }  
 }
