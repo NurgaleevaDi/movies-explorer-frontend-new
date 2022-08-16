@@ -7,7 +7,7 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
-import NotFound from '../NotFound/NotFound';
+import Navigation from '../Navigation/Navigation';
 
 function App() {
   return (
@@ -32,8 +32,8 @@ function App() {
           <Route path="/signin">
             <Login />
           </Route>
-          <Route path="/not-found">
-            <NotFound />
+          <Route path="/navigation">
+            <Navigation />
           </Route>
         </Switch>
       </div>

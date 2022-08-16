@@ -24,12 +24,13 @@ function SavedMovies() {
                 button="header__invisible-button"
                 // openMenu={openMenu}
                 openMenu={handleOpenMenu}
+                textColor="navigation__menu-navlink_black"
             />
-              <HeaderMenu
+              {/* <HeaderMenu
                 openMenu={openMenu}
                 onClose={handleCloseMenu}
                 // invisibleMenu="header__menu-invisible"
-            />
+            /> */}
             <section className="movies__search">
                 <div className="movies__search-block">
                     <form className="movies__input-conteiner">
