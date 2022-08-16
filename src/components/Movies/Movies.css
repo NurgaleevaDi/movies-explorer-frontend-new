@@ -3,6 +3,7 @@
     margin-left: 10px;
     display: grid;
     grid-template-rows: 74px 272px 1fr 166px 270px;
+    height: 100vh;
 }
 .movies__more {
     margin-bottom: 80px;
