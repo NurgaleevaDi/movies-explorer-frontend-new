@@ -10,7 +10,7 @@ import AboutMe from "./AboutMe/AboutMe";
 
 function Main() {
     return(
-        <div className="main">
+        <main className="main">
             <Header 
                 link="/signup"
                 name="Войти"
@@ -24,7 +24,7 @@ function Main() {
             <AboutMe />
             <Portfolio />
             <Footer />
-        </div>
+        </main>
     )
 }
 export default Main;

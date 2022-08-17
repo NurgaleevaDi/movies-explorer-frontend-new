@@ -8,10 +8,10 @@ function SearchForm() {
             <div className="movies__search-block">
                 <form className="movies__input-conteiner">
                     <img src={search} className="movies__img-search" alt="Иконка поиска"/>
-                    <input type="text" className="movies__input" placeholder="Фильм"/>
+                    <input type="text" className="movies__input" placeholder="Фильм" required/>
                     <button className="movies__button button" type="submit">
                         <img src={find} alt="Кнопка искать"/>
-                    </button> 
+                    </button>
                 </form>
                 <div className="movies__shorts-conteiner">
                     <div className="movies__checkbox-group">
