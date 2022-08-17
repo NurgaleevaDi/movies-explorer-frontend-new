@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg"
+import Input from "../Input/Input";
 
 function Login() {
     return(
@@ -12,30 +13,24 @@ function Login() {
                 <p className="register__title">Рады видеть!</p>
             </div>
             <form className="register__form">
-                <div className="register__input-container">
-                    <p className="register__input-disription">E-mail</p>
-                    <input 
-                        className="register-input__text"
-                        type="text" 
-                        name="useremail"
-                        placeholder="E-mail"
-                        value="pochta@yandex.ru"
-                        required
-                        minLength="2"
-                        maxLength="30"
-                    />
-                </div>
-                <div className="register__input-container">
-                    <p className="register__input-disription">Пароль</p>
-                    <input 
-                        className="register-input__text"
-                        type="password" 
-                        name="password"
-                        placeholder="Пароль"
-                        value="Пароль"
-                        required
-                    />
-                </div>
+                <Input 
+                    discription="E-mail"
+                    type="text" 
+                    name="useremail"
+                    placeholder="E-mail"
+                    value="pochta@yandex.ru"
+                    required
+                    minLength="2"
+                    maxLength="30"
+                />
+                 <Input
+                    discription="Пароль"
+                    type="password" 
+                    name="password"
+                    placeholder="Пароль"
+                    value="Пароль"
+                    required
+                /> 
             </form>
             <div className="register__footer">
                 <button type="button" className="register__btn">Войти</button>
