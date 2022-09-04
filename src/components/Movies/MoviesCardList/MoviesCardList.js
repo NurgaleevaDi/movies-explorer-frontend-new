@@ -1,44 +1,37 @@
 import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
-import film1 from "../../../images/film1.jpg";
-import film2 from "../../../images/film2.jpg";
-import film3 from "../../../images/film3.jpg";
-import film4 from "../../../images/film4.jpg";
-import film5 from "../../../images/film5.jpg";
+import { useState } from "react";
 
-function MoviesCardList() {
+function MoviesCardList(props) {
+    console.log('MoviesList ', props.movies);
+    // const [isLiked, setIsLiked] = useState(false);
+
+    // function handleSavedMovie() {
+    //     setIsLiked(true);
+    //     console.log('ok');
+    // }
+
+    //const filtredMovies = props.movies;
+    //const filteredMoviesId = filtredMovies.map(a => a.id);
+    
+
     return(
         <div className="movies-cardlist">
-            <MoviesCard 
-                name="33 слова о дизайне"
-                time="1ч 47м"
-                src={film1}
-                lableClassName="movies-card__btn"
-            />
-             <MoviesCard 
-                name="33 слова о дизайне"
-                time="1ч 47м"
-                src={film2}
-                lableClassName="movies-card__btn"
-            />
-             <MoviesCard 
-                name="33 слова о дизайне"
-                time="1ч 47м"
-                src={film3}
-                lableClassName="movies-card__btn movies-card__btn_active"
-            />
-             <MoviesCard 
-                name="33 слова о дизайне"
-                time="1ч 47м"
-                src={film4}
-                lableClassName="movies-card__btn"
-            />
-             <MoviesCard 
-                name="33 слова о дизайне"
-                time="1ч 47м"
-                src={film5}
-                lableClassName="movies-card__btn movies-card__btn_active"
-            />
+            {/* <span className="movies-cardlist__error">{props.errorSearch}</span> */}
+            {props.movies.map((movie) => (
+                 <MoviesCard
+                    key={movie.id}
+                    {...movie}
+                    //для сохранения фильмов
+                    onSavedMovie={props.handleSavedMovie}
+                    onRemoveMovie={props.handleRemoveMovie}
+                    savedMoviesId={props.savedMoviesId}
+                    //если в массиве id сохраненных фильмов есть id карточки, то метод indexOf вернет значение, если нет, то -1
+                    isSaved={props.savedMoviesId.indexOf(movie.id) !== -1 }
+
+                 />
+            ))}
+           
         </div>
     )
 }
