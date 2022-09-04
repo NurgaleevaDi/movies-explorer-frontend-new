@@ -20,7 +20,7 @@ function MoviesCardList(props) {
             {/* <span className="movies-cardlist__error">{props.errorSearch}</span> */}
             {props.movies.map((movie) => (
                  <MoviesCard
-                    key={movie.id}
+                    key={movie.id || movie._id}
                     {...movie}
                     //для сохранения фильмов
                     onSavedMovie={props.handleSavedMovie}

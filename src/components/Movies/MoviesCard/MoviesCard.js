@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function MoviesCard(props) {
-    console.log('MoviesCard props ', props);
+    //console.log('MoviesCard props ', props);
     //const [isSaved, setIsSaved] = useState(false)
     const location = useLocation();
     

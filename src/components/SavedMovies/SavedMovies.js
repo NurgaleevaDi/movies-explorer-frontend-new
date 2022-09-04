@@ -6,12 +6,19 @@ import Footer from "../Footer/Footer";
 import SearchForm from "../Movies/SearchForm/SearchForm";
 import mainApi from "../../utils/MainApi";
 import { searchFilter } from "../../utils/utils";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
+import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
 
+    const currentUser = React.useContext(CurrentUserContext);
+    console.log('current user', currentUser._id);
+
     const [savedMovies, setSavedMovies] = useState([]);
     const [savedMoviesId, setSavedMoviesId] = useState([]);
+    const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
     const [errorSearch, setErrorSearch] = useState('');
+    const [loading, setLoading] = useState(false);
     const [filteredMovies, setFilteredMovies] = useState([]);
     
     function getFilms() {
@@ -19,10 +26,11 @@ function SavedMovies(props) {
         mainApi
             .getFilms(token)
             .then((movies) => {
-                setSavedMovies(movies.data);
-                console.log('saved res ', movies.data);
-                setSavedMoviesId(movies.data.map(a => a._id));
-                console.log('saved res ', savedMoviesId);
+                //отбираем фильмы текущего пользователя
+                const ownerMovies = movies.data.filter((movie) => movie.owner === currentUser._id);
+                setSavedMovies(ownerMovies);
+                setFilteredSavedMovies(ownerMovies);
+                setSavedMoviesId(ownerMovies.map(a => a._id));
             })
             .catch((err) => console.log(err));
     }
@@ -31,7 +39,9 @@ function SavedMovies(props) {
         const token = localStorage.getItem('jwt');
         mainApi
             .deleteFilm(_id, token)
-            .then((res) => {
+            .then((film) => {
+                setFilteredSavedMovies((state) =>
+                state.filter((c) => (c._id === _id ? film._id : c)))
             })
             .catch((err) => {
                 console.log(err);
@@ -40,28 +50,33 @@ function SavedMovies(props) {
     }
 
     function handleSearch(keyWord, isShorts) {
-        console.log(savedMovies);
+        setLoading(true);
+        console.log('savedMovies ', savedMovies);
         searchFilter(savedMovies, keyWord, isShorts);
         let movies = searchFilter(savedMovies, keyWord, isShorts);
         if (movies.length === 0) {
+            setLoading(false);
             setErrorSearch('Ничего не найдено');
-            setSavedMovies([]);
+            //setSavedMovies([]);
+            setFilteredSavedMovies([])
         } else {
+            setLoading(false);
             setErrorSearch('');
-            setSavedMovies(movies);
-
+            //setSavedMovies(movies);
+            setFilteredSavedMovies(movies);
         }
     }
 
     useEffect(()=> {
         if (props.loggedIn) {
             getFilms();
+            setFilteredSavedMovies(savedMovies);
         }
     }, [props.loggedIn])
     
-    // useEffect(()=> {
-    //         getFilms();    
-    // }, [])
+    useEffect(()=> {
+            getFilms(); 
+    }, [])
 
     // useEffect(() => {
 
@@ -76,13 +91,16 @@ function SavedMovies(props) {
             />
             <SearchForm
                 handleSearch={handleSearch}
-            />
-            <MoviesCardList
-                movies={savedMovies}
-                savedMoviesId={savedMoviesId}
-                handleRemoveMovie={handleRemoveMovie}
                 errorSearch={errorSearch}
             />
+            {loading
+                ? <Preloader />
+                :  <MoviesCardList
+                movies={filteredSavedMovies}
+                savedMoviesId={savedMoviesId}
+                handleRemoveMovie={handleRemoveMovie}
+                />
+            }
             <Footer />
         </div>
     )

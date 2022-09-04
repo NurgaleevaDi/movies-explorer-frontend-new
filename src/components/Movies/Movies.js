@@ -103,7 +103,8 @@ function Movies(props) {
             setLoading(false);
             setErrorSearch('');
             setMovies(filtered);
-            localStorage.setItem('filteredMovies', JSON.stringify(movies));
+            // localStorage.setItem('filteredMovies', JSON.stringify(movies));
+            localStorage.setItem('filteredMovies', JSON.stringify(filtered));
         }  
     }
 
@@ -184,7 +185,7 @@ function Movies(props) {
         //console.log('movies useEffect ', movies);
         setMovies(movies || []);
         getSavedStatus();
-        setIsShorts(localStorage.getItem('isShorts'));
+        setIsShorts(JSON.parse(localStorage.getItem('isShorts')));
     },[]);
 
 
