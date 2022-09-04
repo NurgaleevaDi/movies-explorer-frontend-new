@@ -53,19 +53,19 @@ function SavedMovies(props) {
         }
     }
 
-    // useEffect(()=> {
-    //     if (props.loggedIn) {
-    //         getFilms();
-    //     }
-    // }, [props.loggedIn])
-    
     useEffect(()=> {
-            getFilms();    
-    }, [])
+        if (props.loggedIn) {
+            getFilms();
+        }
+    }, [props.loggedIn])
+    
+    // useEffect(()=> {
+    //         getFilms();    
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    })
+    // })
    
     return(
         <div className="movies movies_saved">

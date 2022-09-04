@@ -20,19 +20,19 @@ function Movies(props) {
     const [savedMoviesId, setSavedMoviesId] = useState([]);
    // const [savedFilms, setSavedFilms] = useState([]);
 
-    //получение всех фильмов из MoviesApi
-    const getAllMovies = () => {
-        setLoading(true);
-        MoviesApi.getMovies()
-            .then((movies) => {
-                    setAllMovies([...movies]);
-                    setLoading(false);                
-            })
-            .catch((err) => {
-                setLoading(false);
-                console.log(err);
-            })
-    }
+    // //получение всех фильмов из MoviesApi
+    // const getAllMovies = () => {
+    //     setLoading(true);
+    //     MoviesApi.getMovies()
+    //         .then((movies) => {
+    //                 setAllMovies([...movies]);
+    //                 setLoading(false);                
+    //         })
+    //         .catch((err) => {
+    //             setLoading(false);
+    //             console.log(err);
+    //         })
+    // }
 
     //фильтр фильмов по ключевому слову
     function searchFilter(movies, keyWord, isShorts) {
@@ -55,22 +55,60 @@ function Movies(props) {
 
     //функция срабатывает при submit на поиске или чекбоксе короткометражек, 
     // фильтрует фильмы по состоянию чекбокса и ключевому слову, сохраняет в localStorage отобранные фильмы, 
+    // function handleSearch(keyWord, isShorts) {
+    //     if(allMovies.length === 0) {
+    //        getAllMovies();
+    //     }
+    //     //searchFilter(allMovies, keyWord, isShorts);
+    //     let movies = searchFilter(allMovies, keyWord, isShorts);
+    //     //console.log('movies after search ', movies);
+    //     if (movies.length === 0) {
+    //         setErrorSearch('Ничего не найдено');
+    //         setMovies([]);
+    //     } else {
+    //         setErrorSearch('');
+    //         setMovies(movies);
+    //         localStorage.setItem('filteredMovies', JSON.stringify(movies));
+    //     }
+    // }
+
     function handleSearch(keyWord, isShorts) {
-        if(allMovies.length === 0) {
-           getAllMovies();
+        setLoading(true);
+        const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies'));
+        if (!filteredMovies) {
+            MoviesApi.getMovies()
+            .then((movies) => {
+                    localStorage.setItem('allMovies', JSON.stringify(movies))
+                    setAllMovies([...movies]);
+                    handleCheck(keyWord, isShorts);               
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+        } else {
+            handleCheck(keyWord, isShorts);
         }
-        //searchFilter(allMovies, keyWord, isShorts);
-        let movies = searchFilter(allMovies, keyWord, isShorts);
-        //console.log('movies after search ', movies);
-        if (movies.length === 0) {
+    };
+
+    function handleCheck(keyWord, isShorts) {
+        const filteredMovies = JSON.parse(localStorage.getItem('allMovies'));
+        const filtered = searchFilter(filteredMovies, keyWord, isShorts);
+
+        if (filtered.length === 0) {
             setErrorSearch('Ничего не найдено');
             setMovies([]);
+            setLoading(false);
         } else {
+            setLoading(false);
             setErrorSearch('');
-            setMovies(movies);
+            setMovies(filtered);
             localStorage.setItem('filteredMovies', JSON.stringify(movies));
-        }
+        }  
     }
+
+
+
 
     //сохраняет фильмы по нажатию на ярлык карточки в mainApi
     function handleSavedMovie(film) {
@@ -147,8 +185,6 @@ function Movies(props) {
         setMovies(movies || []);
         getSavedStatus();
         setIsShorts(localStorage.getItem('isShorts'));
-        console.log()
-
     },[]);
 
 
