@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function MoviesCardList(props) {
-    console.log('MoviesList ', props);
+    //console.log('MoviesList ', props);
     const location = useLocation();
-
     const [maximumMovies, setMaximumMovies] = useState(0);
     const [amount, setAmount] = useState(0);
 
@@ -44,9 +43,6 @@ function MoviesCardList(props) {
             }, 500);
         });
     }, []);
-
-    
-    
 
     return(
         <div className="movies-list">

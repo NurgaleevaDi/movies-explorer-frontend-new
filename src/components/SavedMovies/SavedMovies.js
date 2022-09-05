@@ -10,17 +10,12 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
-
     const currentUser = React.useContext(CurrentUserContext);
-    console.log('current user', currentUser._id);
-
     const [savedMovies, setSavedMovies] = useState([]);
     const [savedMoviesId, setSavedMoviesId] = useState([]);
     const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
     const [errorSearch, setErrorSearch] = useState('');
     const [loading, setLoading] = useState(false);
-    const [keyWord, setKeyWord] = useState('');
-    const [filteredMovies, setFilteredMovies] = useState([]);
     
     function getFilms() {
         const token = localStorage.getItem('jwt');
@@ -47,26 +42,22 @@ function SavedMovies(props) {
             .catch((err) => {
                 console.log(err);
             })
-
     }
 
     function handleSearch(keyWord, isShorts) {
         setLoading(true);
-        console.log('savedMovies ', savedMovies);
+        console.log('savedMovies ', savedMovies, 'keaword', keyWord);
         searchFilter(savedMovies, keyWord, isShorts);
         let movies = searchFilter(savedMovies, keyWord, isShorts);
+        console.log(movies);
         if (movies.length === 0) {
             setLoading(false);
             setErrorSearch('Ничего не найдено');
-            //setSavedMovies([]);
             setFilteredSavedMovies([])
         } else {
             setLoading(false);
             setErrorSearch('');
-            //setSavedMovies(movies);
             setFilteredSavedMovies(movies);
-            setKeyWord(keyWord);
-            
         }
     }
 
@@ -80,11 +71,7 @@ function SavedMovies(props) {
     useEffect(()=> {
             getFilms();
     }, [])
-
-    // useEffect(() => {
-
-    // })
-   
+ 
     return(
         <div className="movies movies_saved">
             <Header

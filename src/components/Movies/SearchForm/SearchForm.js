@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function SearchForm(props) {
-    
     const [keyWord, setKeyWord] = useState("");
     const [isValidKeyWord, setIsValidKeyWord] = useState(false);
     const [errorKeyWord, setErrorKeyWord] = useState("");

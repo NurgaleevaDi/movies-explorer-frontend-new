@@ -19,13 +19,6 @@ function App() {
   const [errorLogin, setErrorLogin] = useState('');
   const [currentUser, setCurrentUser] = useState('');
   const [statusProfile, setStatusProfile] = useState('');
-
-  // const [isSaved, setIsSaved] = useState(false);
-  // const [savedMoviesId, setSavedMoviesId] = useState([]);
-  // const [savedMovies, setSavedMovies] = useState([]);
-
-  //console.log('loggedIn ', loggedIn);
-
   const history = useHistory();
 
   //Регистрация

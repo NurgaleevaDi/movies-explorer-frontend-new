@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function MoviesCard(props) {
-    console.log('MoviesCard props isSaved', props);
-    //const [isSaved, setIsSaved] = useState(false)
+    //console.log('MoviesCard props isSaved', props);
     const location = useLocation();
     
     const cardLableClassName = props.isSaved

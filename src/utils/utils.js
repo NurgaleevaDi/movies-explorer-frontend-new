@@ -8,7 +8,7 @@ export function searchFilter(movies, keyWord, isShorts) {
         .toLowerCase()
         .includes(keyWord.toLowerCase()))
     }
-    if(!isShorts) {
+    if(isShorts) {
         return filtered.filter((element) => element.duration <= 40);
     }
     return filtered;

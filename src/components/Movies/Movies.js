@@ -10,29 +10,13 @@ import mainApi from "../../utils/MainApi";
 
 
 function Movies(props) {
-
-    const [allMovies, setAllMovies] = useState([]);
+    //const [allMovies, setAllMovies] = useState([]);
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [errorSearch, setErrorSearch] = useState('');
     const [isShorts, setIsShorts] = useState(false);
     const [savedMovies, setSavedMovies] = useState([]);
     const [savedMoviesId, setSavedMoviesId] = useState([]);
-   // const [savedFilms, setSavedFilms] = useState([]);
-
-    // //получение всех фильмов из MoviesApi
-    // const getAllMovies = () => {
-    //     setLoading(true);
-    //     MoviesApi.getMovies()
-    //         .then((movies) => {
-    //                 setAllMovies([...movies]);
-    //                 setLoading(false);                
-    //         })
-    //         .catch((err) => {
-    //             setLoading(false);
-    //             console.log(err);
-    //         })
-    // }
 
     //фильтр фильмов
     function searchFilter(movies, keyWord, isShorts) {
@@ -55,23 +39,7 @@ function Movies(props) {
 
     //функция срабатывает при submit на поиске или чекбоксе короткометражек, 
     // фильтрует фильмы по состоянию чекбокса и ключевому слову, сохраняет в localStorage отобранные фильмы, 
-    // function handleSearch(keyWord, isShorts) {
-    //     if(allMovies.length === 0) {
-    //        getAllMovies();
-    //     }
-    //     //searchFilter(allMovies, keyWord, isShorts);
-    //     let movies = searchFilter(allMovies, keyWord, isShorts);
-    //     //console.log('movies after search ', movies);
-    //     if (movies.length === 0) {
-    //         setErrorSearch('Ничего не найдено');
-    //         setMovies([]);
-    //     } else {
-    //         setErrorSearch('');
-    //         setMovies(movies);
-    //         localStorage.setItem('filteredMovies', JSON.stringify(movies));
-    //     }
-    // }
-
+   
     function handleSearch(keyWord, isShorts) {
         setLoading(true);
         const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies'));
@@ -79,7 +47,7 @@ function Movies(props) {
             MoviesApi.getMovies()
             .then((movies) => {
                     localStorage.setItem('allMovies', JSON.stringify(movies))
-                    setAllMovies([...movies]);
+                    //setAllMovies([...movies]);
                     handleCheck(keyWord, isShorts);               
             })
             .catch((err) => {
@@ -107,9 +75,6 @@ function Movies(props) {
             localStorage.setItem('filteredMovies', JSON.stringify(filtered));
         }  
     }
-
-
-
 
     //сохраняет фильмы по нажатию на ярлык карточки в mainApi
     function handleSavedMovie(film) {
@@ -199,7 +164,6 @@ function Movies(props) {
     //     setMovies(movies || []);
     //     getSavedStatus();
     // })
-    
     
     // useEffect(() => {
     //     if (props.loggedIn) {
