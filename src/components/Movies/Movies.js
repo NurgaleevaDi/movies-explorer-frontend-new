@@ -34,7 +34,7 @@ function Movies(props) {
     //         })
     // }
 
-    //фильтр фильмов по ключевому слову
+    //фильтр фильмов
     function searchFilter(movies, keyWord, isShorts) {
         //console.log('keyWord in filter ', keyWord, 'isShorts in filter ', isShorts);
         //console.log('movies in filter ', movies);
@@ -47,7 +47,7 @@ function Movies(props) {
             .toLowerCase()
             .includes(keyWord.toLowerCase()))
         }
-        if(!isShorts) {
+        if(isShorts) {
             return filtered.filter((element) => element.duration <= 40);
         }
         return filtered;
@@ -133,11 +133,12 @@ function Movies(props) {
                 movieId: film.id}, 
                 token
             )
-            .then((res) => {
+            .then((movie) => {
                 //setIsSaved(true);
-                setSavedMoviesId(movies.data.map(a => a.movieId));
-                setSavedMovies(res);
-                console.log('newSavedFilms ', res);
+                setSavedMoviesId(movies.map(a => a.movieId));
+                setSavedMovies(movie);
+                
+                console.log('newSavedFilms ', movie);
             })
             .catch((err) => {
                 console.log(err);

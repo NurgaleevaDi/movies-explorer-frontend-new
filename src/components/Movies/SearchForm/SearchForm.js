@@ -1,14 +1,16 @@
 import React from "react";
 import find from "../../../images/find-button.svg"
 import search from "../../../images/icon-search.svg"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function SearchForm(props) {
     
     const [keyWord, setKeyWord] = useState("");
     const [isValidKeyWord, setIsValidKeyWord] = useState(false);
     const [errorKeyWord, setErrorKeyWord] = useState("");
-    const [isShorts, setIsShorts] = useState(true);
+    const [isShorts, setIsShorts] = useState(false);
+    const location = useLocation();
 
     function handleChangeInput(evt) {
         const input = evt.target;
@@ -32,6 +34,23 @@ function SearchForm(props) {
             props.handleSearch(keyWord, isShorts);
         }
     }
+
+    // заполняет строку поиска и состояние чекбокса значениями из localStorage
+    useEffect(() => {
+        if (location.pathname === '/movies') {
+            const savedInputValue = localStorage.getItem('keyWord');
+            const savedShorts = JSON.parse(localStorage.getItem('isShorts'));
+            if (savedInputValue) {
+                setKeyWord(savedInputValue);
+            }
+            if (savedShorts) {
+                setIsShorts(savedShorts);
+            }
+            if (savedInputValue || (savedShorts === true)) {
+                props.handleSearch(savedInputValue, savedShorts);
+            }
+        }
+    }, []);
 
     return (
         <section className="movies__search">
@@ -62,6 +81,7 @@ function SearchForm(props) {
                             className="movies__checkbox"
                             id="movies__checkbox"
                             onChange={handleChangeCheckbox}
+                            checked={isShorts}
                         />
                         <label htmlFor="movies__checkbox" className="movies__checkbox-label"></label>
                     </div>

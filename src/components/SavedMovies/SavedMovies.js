@@ -19,6 +19,7 @@ function SavedMovies(props) {
     const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
     const [errorSearch, setErrorSearch] = useState('');
     const [loading, setLoading] = useState(false);
+    const [keyWord, setKeyWord] = useState('');
     const [filteredMovies, setFilteredMovies] = useState([]);
     
     function getFilms() {
@@ -64,6 +65,8 @@ function SavedMovies(props) {
             setErrorSearch('');
             //setSavedMovies(movies);
             setFilteredSavedMovies(movies);
+            setKeyWord(keyWord);
+            
         }
     }
 
@@ -75,7 +78,7 @@ function SavedMovies(props) {
     }, [props.loggedIn])
     
     useEffect(()=> {
-            getFilms(); 
+            getFilms();
     }, [])
 
     // useEffect(() => {
