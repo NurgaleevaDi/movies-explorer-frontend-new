@@ -135,6 +135,7 @@ function Movies(props) {
             )
             .then((movie) => {
                 //setIsSaved(true);
+                console.log('movie for id', movie);
                 setSavedMoviesId(movies.map(a => a.movieId));
                 setSavedMovies(movie);
                 
@@ -186,6 +187,7 @@ function Movies(props) {
         //console.log('movies useEffect ', movies);
         setMovies(movies || []);
         getSavedStatus();
+        console.log('savedMoviesId useEffect', savedMoviesId);
         setIsShorts(JSON.parse(localStorage.getItem('isShorts')));
     },[]);
 
@@ -229,11 +231,6 @@ function Movies(props) {
                     //isSaved={isSaved}
                     />
             }
-            <div className="movies__more">
-                <button className="movies__btn-more">
-                    Еще
-                </button>
-            </div>
             <Footer />
         </div>
     )
